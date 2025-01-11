@@ -95,8 +95,8 @@ Retrieved Results:
 
 Relevant images (pages) for the query are displayed.
 
-Generated Text Responses:
 
+Generated Text Responses:
 
 Output from Qwen2VL:
 "Passive design plays a critical role in reducing energy consumption..."
