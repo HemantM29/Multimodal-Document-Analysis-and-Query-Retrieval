@@ -1,6 +1,5 @@
 # Multimodal-Document-Analysis-and-Query-Retrieval
 
-Overview
 This script automates the following tasks:
 
 Download PDF documents from the web
@@ -38,32 +37,41 @@ A natural language query (e.g., "What role does passive design play in creating 
 The RAGMultiModalModel.search method retrieves the most relevant images based on the query.
 The get_result_images function extracts the corresponding images from the all_images dictionary.
 6. Analyze Retrieved Images with Visual-Language Models
+
+
 Two visual-language models (Qwen2VL and Blip2) are used to analyze the retrieved images:
+
 Qwen2VL:
 The images and query are formatted into a chat template.
 The model generates text responses that summarize or answer the query based on the images.
+
+
 Blip2:
 The images and query are similarly formatted into a chat template.
 The model generates text responses based on the visual content of the images.
 Dependencies
+
 The script relies on the following libraries:
 
-requests: For downloading the PDFs.
-pdf2image: For converting PDF pages to images.
-matplotlib: For visualizing images.
-byaldi: For indexing images and performing semantic search.
-transformers: For loading and using visual-language models.
-torch: For handling computations on GPU for VL models.
-System packages:
+1. requests: For downloading the PDFs.
+2. pdf2image: For converting PDF pages to images.
+3. matplotlib: For visualizing images.
+4. byaldi: For indexing images and performing semantic search.
+5. transformers: For loading and using visual-language models.
+6. torch: For handling computations on GPU for VL models.
+7. System packages: poppler-utils: Required by pdf2image for PDF conversion.
 
-poppler-utils: Required by pdf2image for PDF conversion.
-How to Run
+
+
+How to Run:
+
 Step 1: Install Dependencies
 Install the necessary Python libraries and system packages:
 
-
 !pip install byaldi pdf2image qwen-vl-utils transformers
+
 !apt-get install -y poppler-utils
+
 Step 2: Download and Process PDFs
 Run the script to download the PDFs, convert them into images, and index them for retrieval.
 
@@ -73,21 +81,22 @@ Modify the query variable with a natural language query and execute the script t
 Step 4: Analyze Results
 The script automatically uses two VL models (Qwen2VL and Blip2) to generate responses based on the retrieved images.
 
-Example Output
-Downloaded PDFs
+Example Output:
 
-Copy code
+Downloaded PDFs
 PDFs downloaded successfully!
 Converted Images
-
-
 Converted Windows.pdf to 10 images.
 Converted Roofs.pdf to 15 images.
 ...
-Retrieved Results
+
+
+Retrieved Results:
 
 Relevant images (pages) for the query are displayed.
-Generated Text Responses
+
+Generated Text Responses:
+
 
 Output from Qwen2VL:
 "Passive design plays a critical role in reducing energy consumption..."
